@@ -33,6 +33,7 @@ export class LoginComponent implements OnInit {
       //this.toast.info(resposta.body.toString())
       //this.toast.info(resposta.headers.get())
       this.service.successfulLogin(resposta.body.toString())
+      this.toast.info(resposta.body.toString())
       this.router.navigate([''])
     }, () => {
       this.toast.error('Usuário e/ou senha inválidos.');
