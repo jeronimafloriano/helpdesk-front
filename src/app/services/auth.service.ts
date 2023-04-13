@@ -14,6 +14,7 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
   authenticate( creds: Credenciais) {
+    localStorage.clear();
     return this.http.post(`${API_CONFIG.baseUrl}/autenticacao/autenticar`, creds, {
       observe: 'response',
       responseType: 'text'
